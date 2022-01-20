@@ -1,6 +1,9 @@
 import React, { useCallback, useState } from 'react';
+
 //styles
 import './App.scss';
+
+//mock data - json
 
 //components
 import Header from './components/Header';
@@ -18,9 +21,10 @@ function App() {
       setSelectedData(index);
     }
   }, []);
+
   return (
     <div className="App">
-      <Header />
+      <Header data={selectedData} />
       <List handle={handleCheck} />
     </div>
   );
