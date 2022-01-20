@@ -39,8 +39,8 @@ const List = ({ handle }: Props) => {
         <Table aria-label="simple table">
           <TableHead>
             <TableRow>
-              <TableCell>#</TableCell>
               <TableCell>Checkbox</TableCell>
+              <TableCell>#</TableCell>
               {columnNames.map((item) => (
                 <TableCell>{item}</TableCell>
               ))}
