@@ -8,7 +8,7 @@ import {
   TableCell,
 } from '@mui/material';
 
-import React, { useEffect, useState } from 'react';
+import React, { useState, memo, useEffect } from 'react';
 
 //mock data
 import Data from '../data/mock.json';
@@ -20,7 +20,7 @@ type Props = {
   handle: (event: any, index: number) => void;
 };
 
-export default function List({}: Props) {
+const List = ({ handle }: Props) => {
   const [columnNames, setcolumnNames] = useState<string[]>([]);
   const names = Object.getOwnPropertyNames(Data[0]);
 
@@ -74,4 +74,6 @@ export default function List({}: Props) {
       </TableContainer>
     </div>
   );
-}
+};
+
+export default memo(List);
